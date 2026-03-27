@@ -6,7 +6,7 @@ Este repositorio esta creado para saber la teoria y conocimiento de los ciclos.
 * Cambiar de grupo.
 * Crear un programa con un menu infinito.
 * Exposicion.
-* integrantes
+* integrantes.
 
 # Reto
 * En esta parte, se nos pide crear un programa donde tenemos 4 opciones que se tiene que cumplir, aparte de explicar cada parte en la exposicion.
