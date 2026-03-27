@@ -9,7 +9,7 @@ Este repositorio esta creado para saber la teoria y conocimiento de los ciclos.
 * integrantes.
 
 # Reto
-* En esta parte, se nos pide crear un programa donde tenemos 4 opciones que se tiene que cumplir, aparte de explicar cada pedazo en la exposicion.
+* Hasta este punto, se nos pide crear un programa donde tenemos 4 opciones que se tiene que cumplir, aparte de explicar cada pedazo en la exposicion.
 
 * El programa se va realizar en VSC, y la presentacion de la exposicion en canva... tambien tenemos que crear un archivo donde vamos a guardar el codigo y puede que otra para las evidencias si es necesario.
 * Ciclos.
