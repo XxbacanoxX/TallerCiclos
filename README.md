@@ -15,4 +15,4 @@ Este repositorio esta creado para saber la teoria y conocimiento de los ciclos.
 
 # Integrantes 
 * Hector Espinosa Luque
-* Ian Isaza Bermudez
+* Ian Isaza Bermude
