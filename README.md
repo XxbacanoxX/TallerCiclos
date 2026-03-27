@@ -14,7 +14,7 @@ Este repositorio esta creado para saber la teoria y conocimiento de los ciclos.
 * El programa se va realizar en VSC, y la presentacion de la exposicion en canva... tambien tenemos que crear un archivo donde vamos a guardar el codigo y puede que otra para las evidencias si es necesario.
 * Ciclos.
 * n-esimo primo.
-* Raices ecuaciones cuadraticas
+* Raices ecuaciones cuadraticas.
 * Promedio de n numeros.
 * Salir.
 
