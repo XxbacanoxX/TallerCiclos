@@ -1,0 +1,276 @@
+import java.util.Scanner;
+
+public class ciclos2 {
+    public static void main(String[] args) {
+        int cont = 0;
+        int opcion = 0;
+        int a;
+        int b;
+        float fibonacci = 0;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("          /\\");
+        System.out.println("         /  \\");
+        System.out.println("        /____\\");
+        System.out.println("       /|    |\\");
+        System.out.println("      /_|____|_\\");
+        System.out.println("        | [] |");
+        System.out.println("        |    |");
+        System.out.println("        |____|");
+        System.out.println("      /        \\");
+        System.out.println("     /          \\");
+        System.out.println("    /____________\\");
+        System.out.println("       ||    ||");
+        System.out.println("       ||    ||");
+        System.out.println("      ");
+
+        while (cont == 0) {
+
+            
+
+            System.out.println(
+                    "elija una opcion: \n \n1. Fibonacci \n2. numero primo \n3. ecuacion cuadratica \n4. promedio\n5. juego \n6. Tabla de multiplicar de un numero \n7. salir \n");
+                
+
+            if (sc.hasNextInt()) {
+                opcion = sc.nextInt();
+            } else {
+                System.out.println("Error: debe ingresar un numero.");
+                sc.next();
+                continue;
+            }
+
+            if (opcion == 1) {
+                System.out.println("ingrese el termino n: ");
+
+                if (!sc.hasNextInt()) {
+                    System.out.println("Error: debe ingresar un numero.");
+                    sc.next();
+                    continue;
+                }
+
+                int n = sc.nextInt();
+
+                if (n == 0) {
+                    fibonacci = 0;
+                } else if (n == 1) {
+                    fibonacci = 1;
+                } else {
+                    float a1 = 0;
+                    float b1 = 1;
+                    for (int i = 2; i <= n; i++) {
+                        fibonacci = a1 + b1;
+                        a1 = b1;
+                        b1 = fibonacci;
+                    }
+                }
+
+                System.out.println("Resultado: " + fibonacci);
+            }
+
+            else if (opcion == 2) {
+                System.out.println("ingrese el termino n: ");
+
+                if (!sc.hasNextInt()) {
+                    System.out.println("Error: debe ingresar un numero.");
+                    sc.next();
+                    continue;
+                }
+
+                int n = sc.nextInt();
+
+                int count = 0;
+                int num = 1;
+
+                while (count < n) {
+                    num++;
+                    boolean isPrime = true;
+
+                    for (int i = 2; i <= Math.sqrt(num); i++) {
+                        if (num % i == 0) {
+                            isPrime = false;
+                            break;
+                        }
+                    }
+
+                    if (isPrime) {
+                        count++;
+                    }
+                }
+
+                System.out.println("Resultado: " + num);
+            }
+
+            else if (opcion == 3) {
+                System.out.println("coeficiente a: ");
+                if (!sc.hasNextInt()) {
+                    System.out.println("Error.");
+                    sc.next();
+                    continue;
+                }
+                a = sc.nextInt();
+
+                System.out.println("coeficiente b: ");
+                if (!sc.hasNextInt()) {
+                    System.out.println("Error.");
+                    sc.next();
+                    continue;
+                }
+                b = sc.nextInt();
+
+                System.out.println("coeficiente c: ");
+                if (!sc.hasNextInt()) {
+                    System.out.println("Error.");
+                    sc.next();
+                    continue;
+                }
+                int c = sc.nextInt();
+
+                double discriminante = b * b - 4 * a * c;
+
+                if (discriminante > 0) {
+                    double raiz1 = (-b + Math.sqrt(discriminante)) / (2 * a);
+                    double raiz2 = (-b - Math.sqrt(discriminante)) / (2 * a);
+                    System.out.println("Raices: " + raiz1 + " y " + raiz2);
+                } else if (discriminante == 0) {
+                    double raiz = -b / (2 * a);
+                    System.out.println("Raiz: " + raiz);
+                } else {
+                    System.out.println("No tiene raices reales.");
+                }
+            }
+
+            else if (opcion == 4) {
+                System.out.println("cantidad de numeros: ");
+
+                if (!sc.hasNextInt()) {
+                    System.out.println("Error.");
+                    sc.next();
+                    continue;
+                }
+
+                int n = sc.nextInt();
+
+                float[] numeros = new float[n];
+                float suma = 0;
+
+                for (int i = 0; i < n; i++) {
+                    System.out.println("numero " + (i + 1) + ": ");
+
+                    if (!sc.hasNextFloat()) {
+                        System.out.println("Error.");
+                        sc.next();
+                        i--;
+                        continue;
+                    }
+
+                    numeros[i] = sc.nextFloat();
+                    suma += numeros[i];
+                }
+
+                float promedio = suma / n;
+                System.out.println("Promedio: " + promedio);
+            }
+
+            else if (opcion == 5) {
+                System.out.println("juego de adivinar el numero: eliga el rango de los numeros n y m:");
+
+                int n, m;
+
+                System.out.println("n: ");
+                if (!sc.hasNextInt()) {
+                    System.out.println("Error.");
+                    sc.next();
+                    continue;
+                }
+                n = sc.nextInt();
+
+                System.out.println("m: ");
+                if (!sc.hasNextInt()) {
+                    System.out.println("Error.");
+                    sc.next();
+                    continue;
+                }
+                m = sc.nextInt();
+
+                while (n == m) {
+                    System.out.println("Error: n debe ser distinto que m.");
+                    System.out.println("m: ");
+                    if (!sc.hasNextInt()) {
+                        System.out.println("Error.");
+                        sc.next();
+                        continue;
+                    }
+                    m = sc.nextInt();
+                }
+
+                int min = Math.min(n, m);
+                int max = Math.max(n, m);
+
+                int numeroAleatorio = (int) (Math.random() * (max - min + 1)) + min;
+
+                System.out.println("Adivina el numero entre " + min + " y " + max);
+
+                int intento;
+
+                if (!sc.hasNextInt()) {
+                    System.out.println("Error.");
+                    sc.next();
+                    continue;
+                }
+                intento = sc.nextInt();
+
+                while (intento != numeroAleatorio) {
+                    if (intento < numeroAleatorio) {
+                        System.out.println("El numero es mayor. Intenta de nuevo:");
+                    } else {
+                        System.out.println("El numero es menor. Intenta de nuevo:");
+                    }
+
+                    if (!sc.hasNextInt()) {
+                        System.out.println("Error.");
+                        sc.next();
+                        continue;
+                    }
+
+                    intento = sc.nextInt();
+                }
+
+                System.out.println("=== ganaste ===");
+            }
+
+            else if (opcion == 6) {
+                System.out.println("Tabla de multiplicar de un numero");
+                System.out.println("Ingrese un numero entero positivo:");
+
+                if (sc.hasNextInt()) {
+                    int numero = sc.nextInt();
+                    System.out.println("\n");
+
+                    int tabla[] = new int[10];
+
+                    for (int i = 0; i < 10; i++) {
+                        tabla[i] = (i + 1) * numero;
+                        System.out.println(numero + " x " + (i + 1) + " = " + tabla[i]);
+                    }
+                    System.out.println("\n");
+                } else {
+                    System.out.println("Error: No ingresaste un numero valido.");
+                    sc.next();
+                }
+            }
+
+            else if (opcion == 7) {
+                System.out.println("saliendo");
+                cont++;
+            }
+
+            else {
+                System.out.println("opcion no valida.");
+            }
+        }
+
+        sc.close();
+    }
+}
