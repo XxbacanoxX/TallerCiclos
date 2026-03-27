@@ -2,7 +2,7 @@
 Este repositorio esta creado para saber la teoria y conocimiento de los ciclos.
 
 # Contenido
-* Repositorio.
+* Repositorio
 * Cambiar de grupo.
 * Crear un programa con un menu infinito.
 * Exposicion.
